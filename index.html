@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ARC.3 - Desarrollo de páginas web y fotografía profesional en Sevilla. Transformamos ideas digitales en realidad.">
+    <meta name="keywords" content="desarrollo web, fotografía profesional, Sevilla, ARC.3, páginas web, automatización">
+    <meta name="author" content="ARC.3">
+    <title>ARC.3 - Desarrollo Web y Fotografía Profesional</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/logo.png" type="image/png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header con logo fijo -->
+    <header class="header">
+        <div class="header-container">
+            <nav class="nav">
+                <div class="nav-menu">
+                    <a href="#inicio" class="nav-link">Inicio</a>
+                    <a href="#nosotros" class="nav-link">Nosotros</a>
+                    <a href="#servicios" class="nav-link">Servicios</a>
+                    <a href="#contacto" class="nav-link">Contacto</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+            <div class="logo-container">
+                <img src="img/logo.png" alt="ARC.3 Logo" class="logo">
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="hero-title-line">Transformamos</span>
+                <span class="hero-title-line hero-title-highlight">Ideas Digitales</span>
+                <span class="hero-title-line">En Realidad</span>
+            </h1>
+            <p class="hero-subtitle">Desarrollo Web & Fotografía Profesional</p>
+            <div class="hero-buttons">
+                <a href="#servicios" class="btn btn-primary">Nuestros Servicios</a>
+                <a href="#contacto" class="btn btn-secondary">Contáctanos</a>
+            </div>
+        </div>
+        <div class="hero-background">
+            <div class="hero-particle"></div>
+            <div class="hero-particle"></div>
+            <div class="hero-particle"></div>
+            <div class="hero-particle"></div>
+            <div class="hero-particle"></div>
+        </div>
+    </section>
+
+    <!-- Sección Nosotros -->
+    <section id="nosotros" class="section about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sobre <span class="neon-text">ARC.3</span></h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Nuestra Historia</h3>
+                    <p>
+                        Todo comenzó sintiéndonos improductivos como grupo de jóvenes con la ambición de ayudar a empresas 
+                        y generar ingresos significativos. Nuestro viaje started con varios proyectos en Blogger.com, 
+                        donde creamos webs con artículos y las conectamos con AdSense.
+                    </p>
+                    <p>
+                        Esta experiencia inicial despertó nuestro interés en el mundo del trading, motivándonos a descubrir 
+                        y aprender continuamente nuevas estrategias y tecnologías. Con el tiempo, evolucionamos hacia la 
+                        automatización de procesos mediante el desarrollo de sitios web.
+                    </p>
+                    <p>
+                        Actualmente, nos especializamos en desarrollo web profesional, y estamos expandiendo nuestros 
+                        horizontes. De cara al futuro, planeamos implementar bots de automatización de procesos para 
+                        ayudar a las empresas en su crecimiento. Además, gracias a la colaboración de nuevos profesionales, 
+                        ahora ofrecemos servicios de fotografía profesional para negocios.
+                    </p>
+                    
+                    <div class="founders">
+                        <h4>Fundadores</h4>
+                        <div class="founders-grid">
+                            <div class="founder-card">
+                                <div class="founder-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <h5>Marcos Gamboa Redondo</h5>
+                                <p class="founder-role">Co-fundador</p>
+                            </div>
+                            <div class="founder-card">
+                                <div class="founder-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <h5>Álvaro Escobar Recacha</h5>
+                                <p class="founder-role">Co-fundador</p>
+                            </div>
+                            <div class="founder-card">
+                                <div class="founder-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <h5>Alessandro Maraver Salas</h5>
+                                <p class="founder-role">Co-fundador</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <div class="about-image-container">
+                        <div class="about-image-placeholder">
+                            <i class="fas fa-rocket"></i>
+                            <p>Espacio para imagen personalizable</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="servicios" class="section services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestros <span class="neon-text">Servicios</span></h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Servicio 1: Desarrollo Web -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Desarrollo Web</h3>
+                    <p>
+                        Creamos sitios web modernos, responsivos y optimizados para tu negocio. 
+                        Desde landing pages hasta aplicaciones web complejas, transformamos tus ideas 
+                        en experiencias digitales únicas.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Diseño responsivo</li>
+                        <li><i class="fas fa-check"></i> Optimización SEO</li>
+                        <li><i class="fas fa-check"></i> Integración con redes sociales</li>
+                        <li><i class="fas fa-check"></i> Mantenimiento y soporte</li>
+                    </ul>
+                </div>
+                
+                <!-- Servicio 2: Fotografía Profesional -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Fotografía Profesional</h3>
+                    <p>
+                        Servicio de fotografía profesional para negocios. Ofrecemos imágenes personalizadas 
+                        y editables que destacan la identidad de tu marca. Trabajamos de manera presencial 
+                        en la provincia de Sevilla.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Fotografía de producto</li>
+                        <li><i class="fas fa-check"></i> Retrato corporativo</li>
+                        <li><i class="fas fa-check"></i> Imágenes editables</li>
+                        <li><i class="fas fa-check"></i> Sesiones personalizadas</li>
+                    </ul>
+                </div>
+                
+                <!-- Servicio 3: Automatización (Futuro) -->
+                <div class="service-card service-card-future">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="future-badge">
+                        <i class="fas fa-clock"></i> Próximamente
+                    </div>
+                    <h3>Automatización de Procesos</h3>
+                    <p>
+                        Próximamente ofreceremos bots de automatización de procesos para empresas. 
+                        Ayudaremos a optimizar y automatizar tareas repetitivas para mejorar la eficiencia 
+                        y el crecimiento de tu negocio.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Automatización de tareas</li>
+                        <li><i class="fas fa-check"></i> Integración con sistemas existentes</li>
+                        <li><i class="fas fa-check"></i> Análisis de procesos</li>
+                        <li><i class="fas fa-check"></i> Soporte continuo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contáct<span class="neon-text">anos</span></h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <p>Estamos aquí para ayudarte. Contáctanos a través de cualquiera de estos medios:</p>
+                    
+                    <div class="contact-methods">
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/34634376247" target="_blank" class="contact-method contact-whatsapp">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>WhatsApp</h4>
+                                <p>+34 634 37 62 47</p>
+                            </div>
+                        </a>
+                        
+                        <!-- Instagram -->
+                        <a href="https://instagram.com/webs.arc" target="_blank" class="contact-method contact-instagram">
+                            <div class="contact-icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Instagram</h4>
+                                <p>@webs.arc</p>
+                            </div>
+                        </a>
+                        
+                        <!-- Email -->
+                        <a href="mailto:webs.arc.3@gmail.com" class="contact-method contact-email">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>webs.arc.3@gmail.com</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono (opcional)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Servicio de interés</label>
+                            <select id="service" name="service" required>
+                                <option value="">Selecciona un servicio</option>
+                                <option value="desarrollo-web">Desarrollo Web</option>
+                                <option value="fotografia">Fotografía Profesional</option>
+                                <option value="automatizacion">Automatización (Próximamente)</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Ubicación -->
+    <section class="section location">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestra <span class="neon-text">Ubicación</span></h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="location-content">
+                <div class="location-info">
+                    <h3>Área de Trabajo: Sevilla</h3>
+                    <p>
+                        Aunque actualmente no contamos con una sede física u oficina presencial, 
+                        nuestra área de trabajo principal es la <strong>provincia de Sevilla</strong>.
+                    </p>
+                    <p>
+                        Para el <strong>desarrollo de páginas web</strong>, la ubicación no es un impedimento - 
+                        trabajamos con clientes de cualquier lugar. Sin embargo, nuestros servicios de 
+                        <strong>fotografía profesional</strong> son presenciales y están disponibles 
+                        principalmente en la zona de Sevilla y su provincia.
+                    </p>
+                    <div class="location-details">
+                        <div class="location-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Sevilla, España</span>
+                        </div>
+                        <div class="location-item">
+                            <i class="fas fa-globe"></i>
+                            <span>Disponibilidad: Sevilla y provincia</span>
+                        </div>
+                        <div class="location-item">
+                            <i class="fas fa-laptop"></i>
+                            <span>Desarrollo web: Sin limitaciones geográficas</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d503755.2555697369!2d-6.0434704890234375!3d37.38909939999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1268c6e6e3e8e9%3A0xc0c8b5c5e5f3e3e3!2sSevilla%2C%20Espa%C3%B1a!5e0!3m2!1ses!2ses!4v1629876543210!5m2!1ses!2ses" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="img/logo.png" alt="ARC.3 Logo" class="footer-logo-img">
+                    </div>
+                    <p class="footer-description">
+                        Transformamos ideas digitales en realidad. Desarrollo web y fotografía profesional en Sevilla.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/34634376247">+34 634 37 62 47</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-instagram"></i>
+                            <a href="https://instagram.com/webs.arc">@webs.arc</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:webs.arc.3@gmail.com">webs.arc.3@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 ARC.3. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

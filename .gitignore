@@ -1,0 +1,75 @@
+# ========================================
+# GITIGNORE - ARC.3 Web Project
+# ========================================
+
+# Operativos
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores e IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Dependencias
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Build y distribución
+dist/
+build/
+*.min.js
+*.min.css
+
+# Archivos temporales
+*.tmp
+*.temp
+*.log
+*.cache
+
+# Imágenes originales (no optimizadas)
+img/original/
+img/raw/
+*.psd
+*.ai
+*.sketch
+
+# Archivos de configuración local
+.env.local
+.env.*.local
+config.local.*
+
+# Backup
+*.bak
+*.backup
+*~
+
+# Sistema
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Para producción
+.env
+.env.production
+*.pem
+*.key
+*.crt
+
+# Documentación de desarrollo (opcional)
+docs/
+NOTES.md
+TODO.md
