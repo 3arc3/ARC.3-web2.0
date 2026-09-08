@@ -1,506 +1,324 @@
-(() => {
-  "use strict";
+/* ========================================
+   SECCIÓN DE RESEÑAS - ARC.3
+   ======================================== */
 
-  /* =====================================================
-     IMÁGENES
-  ===================================================== */
+.reviews {
+    background: var(--bg-primary);
+}
 
-  const HERO_IMAGE =
-    "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260624_113640_ccf3cf97-d447-425b-a134-d7b09fc743fc.png&w=1280&q=85";
-
-  const SECTION2_IMAGE =
-    "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260624_114219_414dfe80-f15c-4e25-bf52-b13721f4bd88.png&w=1280&q=85";
-
-
-  /* =====================================================
-     SPLASH
-  ===================================================== */
-
-  function initSplash() {
-    const splash = document.getElementById("splash");
-    const counter = document.getElementById("counter");
-
-    if (!splash || !counter) return;
-
-    let value = 0;
-
-    const interval = setInterval(() => {
-      value++;
-
-      counter.textContent = String(value);
-
-      if (value >= 100) {
-        clearInterval(interval);
-
-        /*
-          El prompt original:
-          - llega a 100 en 2 segundos
-          - espera 200ms
-          - empieza el fade
-          - elimina después de la transición
-        */
-
-        setTimeout(() => {
-          splash.classList.add("done");
-
-          setTimeout(() => {
-            splash.remove();
-          }, 700);
-
-        }, 200);
-      }
-
-    }, 20);
-  }
+.reviews-intro {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-top: -0.5rem;
+}
 
 
-  /* =====================================================
-     MOBILE MENU
-  ===================================================== */
+/* ========================================
+   RESUMEN DE VALORACIONES
+   ======================================== */
 
-  function initMobileMenu() {
-    const hamburger = document.getElementById("hamburger");
-    const mobileMenu = document.getElementById("mobileMenu");
+.reviews-summary {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+}
 
-    if (!hamburger || !mobileMenu) return;
+.average-rating {
+    text-align: center;
+    padding: 1.5rem 2.5rem;
+    border: 1px solid rgba(0, 212, 255, 0.25);
+    background: rgba(0, 212, 255, 0.03);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.05);
+}
 
-    const backdrop =
-      mobileMenu.querySelector(".menu-backdrop");
+#averageRating {
+    font-family: var(--font-primary);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--color-neon-blue);
+    text-shadow: var(--neon-glow-subtle);
+}
 
-    const links =
-      mobileMenu.querySelectorAll(".menu-links > a");
+.average-stars {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 0.5rem 0;
+}
 
-    function setMenu(open) {
-      hamburger.classList.toggle("open", open);
+.average-stars i {
+    color: var(--color-neon-blue);
+    font-size: 1.1rem;
+    text-shadow: 0 0 8px rgba(0, 212, 255, 0.7);
+}
 
-      hamburger.setAttribute(
-        "aria-expanded",
-        String(open)
-      );
+#reviewsCount {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
 
-      mobileMenu.classList.toggle("open", open);
 
-      mobileMenu.setAttribute(
-        "aria-hidden",
-        String(!open)
-      );
+/* ========================================
+   FORMULARIO DE RESEÑAS
+   ======================================== */
 
-      document.body.classList.toggle(
-        "no-scroll",
-        open
-      );
+.review-form-container {
+    max-width: 700px;
+    margin: 0 auto var(--spacing-xl);
+}
+
+.review-form {
+    background: rgba(26, 26, 26, 0.55);
+    border: 1px solid rgba(0, 212, 255, 0.25);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.05);
+}
+
+.review-form h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.review-form .form-group {
+    margin-bottom: 1.25rem;
+}
+
+.review-form label {
+    display: block;
+    font-family: var(--font-primary);
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.review-form input,
+.review-form textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    background: #050505;
+    border: 1px solid var(--color-gray-medium);
+    color: var(--text-primary);
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    border-radius: var(--border-radius-sm);
+    outline: none;
+    transition: var(--transition-normal);
+}
+
+.review-form input:focus,
+.review-form textarea:focus {
+    border-color: var(--color-neon-blue);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.15);
+}
+
+.review-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.review-counter {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+
+/* ========================================
+   SELECTOR DE ESTRELLAS
+   ======================================== */
+
+.star-selector {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.star-button {
+    background: transparent;
+    border: none;
+    padding: 0.2rem;
+    cursor: pointer;
+    color: var(--color-gray-light);
+    font-size: 1.8rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.star-button:hover {
+    transform: scale(1.15);
+    color: var(--color-neon-blue);
+}
+
+.star-button.active {
+    color: var(--color-neon-blue);
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+}
+
+.review-submit {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+
+/* ========================================
+   LISTADO DE RESEÑAS
+   ======================================== */
+
+.reviews-list-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.reviews-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.review-card {
+    position: relative;
+    background: rgba(26, 26, 26, 0.65);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    transition: var(--transition-normal);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.review-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 212, 255, 0.55);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.1);
+}
+
+.review-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.review-avatar {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 212, 255, 0.08);
+    border: 1px solid rgba(0, 212, 255, 0.35);
+    border-radius: 50%;
+    color: var(--color-neon-blue);
+}
+
+.review-author-name {
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.review-date {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    margin-top: 0.15rem;
+}
+
+.review-stars {
+    display: flex;
+    gap: 3px;
+    white-space: nowrap;
+}
+
+.review-stars i {
+    color: var(--color-neon-blue);
+    font-size: 0.9rem;
+}
+
+.review-message {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+    word-break: break-word;
+}
+
+
+/* ========================================
+   ESTADOS
+   ======================================== */
+
+.reviews-loading,
+.reviews-empty {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-muted);
+}
+
+.reviews-loading i {
+    color: var(--color-neon-blue);
+    margin-right: 0.5rem;
+}
+
+.reviews-empty i {
+    display: block;
+    font-size: 2.5rem;
+    color: var(--color-neon-blue);
+    margin-bottom: 1rem;
+}
+
+
+/* ========================================
+   RESPONSIVE RESEÑAS
+   ======================================== */
+
+@media (max-width: 768px) {
+
+    .reviews-list {
+        grid-template-columns: 1fr;
     }
 
-    hamburger.addEventListener("click", () => {
-      const isOpen =
-        hamburger.classList.contains("open");
-
-      setMenu(!isOpen);
-    });
-
-    if (backdrop) {
-      backdrop.addEventListener("click", () => {
-        setMenu(false);
-      });
+    .review-form {
+        padding: 1.25rem;
     }
 
-    links.forEach((link) => {
-      link.addEventListener("click", () => {
-        setMenu(false);
-      });
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        setMenu(false);
-      }
-    });
-
-    /*
-      Cerrar también si pasamos de móvil
-      a escritorio.
-    */
-
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 767) {
-        setMenu(false);
-      }
-    });
-  }
-
-
-  /* =====================================================
-     MOBILE DETECTION
-  ===================================================== */
-
-  function isMobile() {
-    return window.matchMedia(
-      "(max-width: 767px)"
-    ).matches;
-  }
-
-
-  /* =====================================================
-     IMAGE WIDTH
-     
-     El prompt original calcula:
-     
-     naturalWidth * (sectionHeight / naturalHeight)
-  ===================================================== */
-
-  function getImageWidth(imageUrl, sectionHeight) {
-    return new Promise((resolve) => {
-      const image = new Image();
-
-      image.onload = () => {
-        if (!image.naturalWidth || !image.naturalHeight) {
-          resolve(sectionHeight);
-          return;
-        }
-
-        const renderWidth =
-          image.naturalWidth *
-          (sectionHeight / image.naturalHeight);
-
-        resolve(renderWidth);
-      };
-
-      image.onerror = () => {
-        /*
-          Si la imagen no carga, no rompemos
-          el resto de la página.
-        */
-
-        resolve(sectionHeight);
-      };
-
-      image.src = imageUrl;
-    });
-  }
-
-
-  /* =====================================================
-     MASKED CARDS
-     
-     Cada tarjeta obtiene:
-     
-     x
-     y
-     sw
-     sh
-     
-     donde:
-       x = posición horizontal
-       y = posición vertical
-       sw = ancho de la sección
-       sh = alto de la sección
-  ===================================================== */
-
-  function initMaskedSection(section, imageUrl, focalDesktop, focalMobile) {
-    if (!section) return;
-
-    const cards = Array.from(
-      section.querySelectorAll(".masked-card")
-    );
-
-    if (!cards.length) return;
-
-    let imageWidth = 0;
-
-
-    async function calculateImageWidth() {
-      const rect = section.getBoundingClientRect();
-
-      imageWidth = await getImageWidth(
-        imageUrl,
-        rect.height
-      );
-
-      updateCards();
+    .average-rating {
+        padding: 1.25rem 2rem;
     }
 
-
-    function updateCards() {
-      const sectionRect =
-        section.getBoundingClientRect();
-
-      const sectionWidth =
-        sectionRect.width;
-
-      const sectionHeight =
-        sectionRect.height;
-
-      if (!sectionWidth || !sectionHeight) {
-        return;
-      }
-
-      const mobile = isMobile();
-
-      const focalX = mobile
-        ? focalMobile
-        : focalDesktop;
-
-
-      cards.forEach((card) => {
-        const cardRect =
-          card.getBoundingClientRect();
-
-        const x =
-          cardRect.left -
-          sectionRect.left;
-
-        const y =
-          cardRect.top -
-          sectionRect.top;
-
-        /*
-          Cuánto sobra horizontalmente
-          la imagen respecto a la sección.
-        */
-
-        const overflow =
-          imageWidth > sectionWidth
-            ? imageWidth - sectionWidth
-            : 0;
-
-        /*
-          Punto focal de la imagen.
-
-          0 = izquierda
-          0.5 = centro
-          1 = derecha
-        */
-
-        const focalOffset =
-          overflow * focalX;
-
-
-        /*
-          Este es exactamente el concepto
-          de MaskedCard del prompt:
-
-          background-size:
-            auto [sectionHeight]px
-
-          background-position:
-            -[x + focalOffset]px
-            -[y]px
-        */
-
-        card.style.backgroundImage =
-          `url("${imageUrl}")`;
-
-        card.style.backgroundSize =
-          `auto ${sectionHeight}px`;
-
-        card.style.backgroundPosition =
-          `-${x + focalOffset}px -${y}px`;
-
-        card.style.backgroundRepeat =
-          "no-repeat";
-      });
+    .review-card-header {
+        flex-direction: column;
+        gap: 0.6rem;
     }
 
-
-    /*
-      ResizeObserver:
-      recalcula cuando cambia el tamaño
-      de la sección.
-    */
-
-    if ("ResizeObserver" in window) {
-      const resizeObserver =
-        new ResizeObserver(() => {
-          calculateImageWidth();
-        });
-
-      resizeObserver.observe(section);
+    .review-stars {
+        padding-left: 3.5rem;
     }
 
-
-    /*
-      También recalculamos al cambiar
-      el tamaño de la ventana.
-    */
-
-    window.addEventListener(
-      "resize",
-      calculateImageWidth
-    );
+}
 
 
-    /*
-      Esperamos a que las imágenes y el layout
-      estén listos.
-    */
+@media (max-width: 480px) {
 
-    if (document.readyState === "complete") {
-      calculateImageWidth();
-    } else {
-      window.addEventListener(
-        "load",
-        calculateImageWidth,
-        { once: true }
-      );
+    .star-button {
+        font-size: 1.6rem;
     }
 
-    /*
-      Primera ejecución.
-    */
-
-    calculateImageWidth();
-  }
-
-
-  /* =====================================================
-     REVEAL ANIMATIONS
-     
-     El prompt original:
-     
-     opacity 0 -> 1
-     translateY(24px) -> 0
-     
-     con stagger de 120ms.
-  ===================================================== */
-
-  function initRevealAnimations() {
-    const revealItems =
-      Array.from(
-        document.querySelectorAll(".reveal")
-      );
-
-    if (!revealItems.length) return;
-
-
-    /*
-      Si IntersectionObserver existe,
-      esperamos a que entren en viewport.
-    */
-
-    if ("IntersectionObserver" in window) {
-
-      const sections = [
-        document.querySelector(".hero"),
-        document.querySelector(".gallery"),
-        document.querySelector(".implants")
-      ].filter(Boolean);
-
-
-      sections.forEach((section) => {
-
-        const items =
-          Array.from(
-            section.querySelectorAll(".reveal")
-          );
-
-        if (!items.length) return;
-
-
-        const observer =
-          new IntersectionObserver(
-            (entries, obs) => {
-
-              entries.forEach((entry) => {
-
-                if (!entry.isIntersecting) {
-                  return;
-                }
-
-                items.forEach((item, index) => {
-
-                  item.style.transitionDelay =
-                    `${index * 120}ms`;
-
-                  item.classList.add(
-                    "visible"
-                  );
-
-                });
-
-                obs.unobserve(entry.target);
-
-              });
-
-            },
-            {
-              threshold: 0.15
-            }
-          );
-
-
-        observer.observe(section);
-      });
-
-
-    } else {
-
-      /*
-        Fallback para navegadores
-        sin IntersectionObserver.
-      */
-
-      revealItems.forEach((item, index) => {
-
-        item.style.transitionDelay =
-          `${index * 120}ms`;
-
-        item.classList.add("visible");
-
-      });
+    #averageRating {
+        font-size: 2.3rem;
     }
-  }
 
-
-  /* =====================================================
-     INIT
-  ===================================================== */
-
-  document.addEventListener(
-    "DOMContentLoaded",
-    () => {
-
-      initSplash();
-
-      initMobileMenu();
-
-      /*
-        HERO
-        focalX:
-          mobile = 0.7
-          desktop = 0.8
-      */
-
-      initMaskedSection(
-        document.querySelector(".hero"),
-        HERO_IMAGE,
-        0.8,
-        0.7
-      );
-
-
-      /*
-        GALLERY
-        focalX:
-          mobile = 0.65
-          desktop = 0.8
-      */
-
-      initMaskedSection(
-        document.querySelector(".gallery"),
-        SECTION2_IMAGE,
-        0.8,
-        0.65
-      );
-
-
-      /*
-        Reveal después de preparar
-        la estructura.
-      */
-
-      initRevealAnimations();
-
+    .review-card {
+        padding: 1.2rem;
     }
-  );
 
-})();
+}})();
